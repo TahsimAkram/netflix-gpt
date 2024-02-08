@@ -1,21 +1,16 @@
-import { signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../utility/firebase";
+import Header from "./Header";
+import useNowPlayingMovies from "../utility/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
+import SecondaryConatainer from "./SecondaryConatainer";
 
 const ContentBrowser = ()=>{
-    const navigate = useNavigate();
-    const signoutHandler = ()=>{
-        signOut(auth).then(() => {
-            navigate("/");
-          }).catch((error) => {
-            // An error happened.
-          });
-    }
-
+  useNowPlayingMovies();
+    
     return(
-        <div className="flex justify-between">
-        <h1>Logged successfully</h1>
-        <button onClick={signoutHandler}>Sign Out</button>
+        <div>
+          <Header/>
+          <MainContainer/>
+          <SecondaryConatainer/>
         </div>
     );
 }
