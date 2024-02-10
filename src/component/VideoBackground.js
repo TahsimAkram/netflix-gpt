@@ -1,42 +1,21 @@
-import React, { useEffect } from "react";
-import {
-  NowPlayingMovieHeader,
-  TRAILER_VIDEO_URL_POSTFIX,
-  TRAILER_VIDEO_URL_PREFIX,
-} from "../utility/constants";
-import { useDispatch, useSelector } from "react-redux";
-import { addTrailerVideoId } from "../utility/moviesSlice";
+import React from "react";
+import { useSelector } from "react-redux";
+import useMovieTrailer from "../utility/useMovieTrailer";
 
 const VideoBackground = ({ id }) => {
-  const dispatcher = useDispatch();
-  const trailerId = useSelector((state)=>state.movies.trailerId);
-  const url = TRAILER_VIDEO_URL_PREFIX + id + TRAILER_VIDEO_URL_POSTFIX
-  console.log("trailer : "+url)
-  const fetchTrailerVideo = async () => {
-    const data = await fetch(url,NowPlayingMovieHeader);
-    const response = await data.json();
-    const trailer = response?.results.filter(
-      (video) => video.type === "Trailer"
-    );
-    dispatcher(addTrailerVideoId(trailer[0].key));
-  };
-
-  useEffect(() => {
-    fetchTrailerVideo();
-  }, []);
+  useMovieTrailer(id);
+  const trailerId = useSelector((state) => state.movies.trailerId);
 
   return (
-    <div className="w-full">
-      <iframe
-        
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${trailerId}`}
+    <div className="w-full h-screen text-white">
+       <iframe
+        className="w-full h-svh aspect-video"
+        src={`https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1`}
         title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen 
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
+      <div className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-r from-black z-10"></div>
     </div>
   );
 };

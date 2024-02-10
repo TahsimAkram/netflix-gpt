@@ -12,7 +12,7 @@ const MainContainer = () => {
   console.log("title:"+title);
   console.log("id:"+id);
   return (
-    <div>
+    <div className="bg-gradient-to-r from-black">
       <VideoTitle title={title} overview={overview} />
       <VideoBackground id={id}/>
     </div>

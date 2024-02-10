@@ -98,7 +98,7 @@ const Login = () => {
       }}
     >
       <Header />
-      <div className="w-4/12 mx-auto mt-9 mb-9 p-16 bg-black opacity-85 rounded-md">
+      <div className="w-[500px] mx-auto mt-28 mb-9 p-16 bg-black opacity-85 rounded-md">
         <h1 className="text-white text-3xl font-bold mb-4">{isSignIn}</h1>
         <form onSubmit={(e) => e.preventDefault()}>
           {errorMessage && (
