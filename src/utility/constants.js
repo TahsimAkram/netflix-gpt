@@ -12,3 +12,5 @@ export const TMDB_NOWPLAYINGMOVIES_URL ="https://api.themoviedb.org/3/movie/now_
 export const JURASICPARK_LOGO_URL = "https://occ-0-3351-3646.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABRzeB5AXytb4LuI0MhsvSXwiIbjU-8HsQ3FyqRABu6PotWQiSwvw5vKjb6BHHDwxV5GARAoPuTiY0hDJsKWpray_jWTOmoWwl7OEfofWBf0c.png"
 export const TRAILER_VIDEO_URL_PREFIX = "https://api.themoviedb.org/3/movie/";
 export const TRAILER_VIDEO_URL_POSTFIX ="/videos";
+export const YOUTUBE_VIDEO_URL_PREFIX = "https://www.youtube.com/embed/"
+export const YOUTUBE_VIDEO_URL_POSTFIX ="?autoplay=1&mute=1&controls=0"

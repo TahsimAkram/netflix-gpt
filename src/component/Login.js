@@ -98,7 +98,7 @@ const Login = () => {
       }}
     >
       <Header />
-      <div className="w-[500px] mx-auto mt-28 mb-9 p-16 bg-black opacity-85 rounded-md">
+      <div className="w-[450px] mx-auto mt-10 p-16 bg-black opacity-85 rounded-md">
         <h1 className="text-white text-3xl font-bold mb-4">{isSignIn}</h1>
         <form onSubmit={(e) => e.preventDefault()}>
           {errorMessage && (
@@ -135,7 +135,7 @@ const Login = () => {
           </button>
         </form>
         {isSignIn === "Sign In" && (
-          <h1 className="text-white text-center mt-6">Forgot password?</h1>
+          <h1 className="text-white text-center mt-6 cursor-pointer">Forgot password?</h1>
         )}
         {isSignIn === "Sign In" ? (
           <h2 onClick={toggleSignIn} className="text-white mt-16">
@@ -143,7 +143,7 @@ const Login = () => {
             <span className="font-semibold cursor-pointer">Sign up now</span>.
           </h2>
         ) : (
-          <h2 onClick={toggleSignIn} className="text-white mt-16">
+          <h2 onClick={toggleSignIn} className="text-white mt-4">
             Already registered?{" "}
             <span className="font-semibold cursor-pointer">Sign In</span>
           </h2>

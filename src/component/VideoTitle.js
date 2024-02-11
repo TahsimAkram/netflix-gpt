@@ -5,7 +5,7 @@ import React from 'react'
 
 const VideoTitle = ({title,overview}) => {
   return (
-    <div className='w-1/3 absolute top-96 left-20 text-white p-8 z-20 '>
+    <div className='w-1/3 absolute top-64 left-20 text-white p-8 z-20 '>
         <h1 className='text-4xl font-bold'>{title}</h1>
         <p className=' mt-8 text-justify tracking-tight'>{overview}</p>
         <div className='flex mt-7'>
