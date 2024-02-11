@@ -6,13 +6,13 @@ const VideoBackground = ({ id }) => {
   useMovieTrailer(id);
   const trailerId = useSelector((state) => state.movies.trailerId);
   return (
-    <div className="h-screen w-screen">
+    <div>
        <iframe
-        className="w-screen h-full z-0"
+        className="w-full h-screen z-0"
         src={`https://www.youtube.com/embed/${trailerId}?autoplay=1&mute=1&controls=0`}
         title="YouTube video player"
         ></iframe>
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-screen bg-gradient-to-r from-black"></div>
     </div>
   );
 };

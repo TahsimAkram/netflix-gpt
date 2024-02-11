@@ -107,7 +107,7 @@ const Login = () => {
             </p>
           )}
           {isSignIn === "Sign Up" && (
-            <input
+            <input name="username"
               type="text"
               placeholder="UserName"
               ref={userName}
@@ -115,12 +115,14 @@ const Login = () => {
             />
           )}
           <input
+            name="email"
             type="text"
             ref={email}
             placeholder="Email or phone number"
             className="border-2 rounded-md w-full mt-4 p-3 bg-black opacity-85 text-white"
           />
           <input
+            name="password"
             type="password"
             ref={password}
             placeholder="Password"

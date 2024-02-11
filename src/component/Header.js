@@ -39,13 +39,13 @@ const Header = () => {
   return (
     <div className={`flex justify-between z-20 bg-gradient-to-b from-black ${user?'w-full absolute':''}`}>
       <img
-        className="w-48 ml-20"
+        className="w-36 ml-20"
         src={NETFLIX_LOGO_CDN_URL}
         alt="netflix_logo"
       />
       {user && user.photoURL && <div className="flex flex-wrap mr-10 justify-between">
-        <img className="w-10 h-10 mt-5 mr-5 rounded-md" src={user.photoURL} alt="user avatar" /> 
-         <button className="bg-red-600 px-3 py-2 h-10 mt-5 text-white rounded-md" onClick={signoutHandler}>Sign Out</button>
+        <img className="w-8 h-8 mt-5 mr-5 rounded-md" src={user.photoURL} alt="user avatar" /> 
+         <button className="bg-red-600 px-3 h-8 mt-5 text-white rounded-md" onClick={signoutHandler}>Sign Out</button>
       </div>}
     </div>
   );

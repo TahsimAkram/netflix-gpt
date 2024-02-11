@@ -8,9 +8,13 @@ export const NowPlayingMovieHeader = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmM2NhMzQwMjk1NWMwY2UwNjk1ZjhiYmY3ZDljODJlNSIsInN1YiI6IjY1YzRiMDI4OTQ1MWU3MDE4NGJkNDVhNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TrPCZFOZAkxGxoDU2h3K9Ea1cUqiFPJHVvxKt0ANRk4'
     }
   };
-export const TMDB_NOWPLAYINGMOVIES_URL ="https://api.themoviedb.org/3/movie/now_playing?page=1";
+export const TMDB_MOVIES_BASE_URL ="https://api.themoviedb.org/3/movie/";
+export const NOW_PLAYING = "now_playing";
+export const POPULAR = "popular";
+export const TOP_RATED = "top_rated";
 export const JURASICPARK_LOGO_URL = "https://occ-0-3351-3646.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABRzeB5AXytb4LuI0MhsvSXwiIbjU-8HsQ3FyqRABu6PotWQiSwvw5vKjb6BHHDwxV5GARAoPuTiY0hDJsKWpray_jWTOmoWwl7OEfofWBf0c.png"
 export const TRAILER_VIDEO_URL_PREFIX = "https://api.themoviedb.org/3/movie/";
 export const TRAILER_VIDEO_URL_POSTFIX ="/videos";
 export const YOUTUBE_VIDEO_URL_PREFIX = "https://www.youtube.com/embed/"
-export const YOUTUBE_VIDEO_URL_POSTFIX ="?autoplay=1&mute=1&controls=0"
+export const YOUTUBE_VIDEO_URL_POSTFIX ="?autoplay=1&mute=1&controls=0&rel=0"
+export const TMDB_IMG_URL_PREFIX = "https://image.tmdb.org/t/p/w500/"

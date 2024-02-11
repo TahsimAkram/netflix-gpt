@@ -9,8 +9,6 @@ const MainContainer = () => {
 
   const selectedMovie = movies[randomIndex];
   const {title,overview,id} = selectedMovie;
-  console.log("title:"+title);
-  console.log("id:"+id);
   return (
     <div className="bg-gradient-to-r from-black">
       <VideoTitle title={title} overview={overview} />
