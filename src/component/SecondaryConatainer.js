@@ -8,7 +8,6 @@ const SecondaryConatainer = () => {
   const popular = selector.popularMovies;
   const topRated = selector.topRatedMovies;
   if(nowPlaying == null || popular == null || topRated ==null ) return;
-  console.log(popular)
   return (
     <div className='bg-black -mt-28'>
       <MoviesList movies={nowPlaying} banner="Now Playing Movies"/>

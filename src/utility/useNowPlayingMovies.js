@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { addNowPlayingMovies, addPopularMovies, addTopRatedMovies } from "./moviesSlice";
 import { useDispatch } from "react-redux";
-import { NOW_PLAYING, NowPlayingMovieHeader, POPULAR, TMDB_MOVIES_BASE_URL, TMDB_NOWPLAYINGMOVIES_URL, TOP_RATED } from "./constants";
+import { NOW_PLAYING, NowPlayingMovieHeader, POPULAR, TMDB_MOVIES_BASE_URL, TOP_RATED } from "./constants";
 
 const useNowPlayingMovies = () => {
   const dispatcher = useDispatch();

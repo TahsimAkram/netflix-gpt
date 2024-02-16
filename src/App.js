@@ -4,6 +4,7 @@ import Body from './component/Body';
 import ContentBrowser from './component/ContentBrowser';
 import { Provider } from 'react-redux';
 import appStore from './utility/appStore';
+import { GptSearchPage } from './component/GptSearchPage';
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -14,6 +15,10 @@ function App() {
     {
         path:"/browse",
         element:<ContentBrowser/>
+    },
+    {
+        path:"/search",
+        element:<GptSearchPage/>
     }
 ]);
 

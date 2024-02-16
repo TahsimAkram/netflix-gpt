@@ -5,7 +5,6 @@ import SecondaryConatainer from "./SecondaryConatainer";
 
 const ContentBrowser = ()=>{
   useNowPlayingMovies();
-    
     return(
         <div>
           <Header/>

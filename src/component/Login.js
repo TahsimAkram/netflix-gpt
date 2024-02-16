@@ -88,17 +88,10 @@ const Login = () => {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${NETFLIX_BG_CDN_URL})`,
-        alt: "netflix_bg",
-        height: "100vh",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
-    >
-      <Header />
-      <div className="w-[450px] mx-auto mt-10 p-16 bg-black opacity-85 rounded-md">
+    <div>
+      <img className="bg-center h-full w-full bg-cover absolute z-0" src={NETFLIX_BG_CDN_URL}  alt="netflix_bg"/>
+      <Header/>
+      <div className="relative w-[30%] mx-auto p-16 bg-black opacity-85 rounded-md">
         <h1 className="text-white text-3xl font-bold mb-4">{isSignIn}</h1>
         <form onSubmit={(e) => e.preventDefault()}>
           {errorMessage && (

@@ -18,6 +18,7 @@ const useMovieTrailer = (id) => {
   
     useEffect(() => {
       fetchTrailerVideo();
+      console.log(url);
     }, []);
   
 }
