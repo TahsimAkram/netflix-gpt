@@ -2,13 +2,13 @@ import React from "react";
 import {
   NETFLIX_BG_CDN_URL,
 } from "../utility/constants";
-import HeaderContents from "./HeaderContents";
 import { useSelector } from "react-redux";
 import languageConstants from "../utility/languageConstants";
 import Header from "./Header";
 
 export const GptSearchPage = () => {
   const selectedLanguage = useSelector(state=>state.config.lang);
+  const language = selectedLanguage.charAt(0).toUpperCase() + selectedLanguage.slice(1)
   return (
     <div>
       <img
@@ -21,11 +21,11 @@ export const GptSearchPage = () => {
         <input
           className="w-3/4 px-3 py-3 rounded-md mr-4 "
           type="text"
-          placeholder={languageConstants[selectedLanguage].inputField}
+          placeholder={languageConstants[language].inputField}
           name="searchbox"
         />
         <button className="bg-red-600 w-1/5 rounded-md text-white text-lg">
-          {languageConstants[selectedLanguage].searchButton}
+          {languageConstants[language].searchButton}
         </button>
       </div>
     </div>

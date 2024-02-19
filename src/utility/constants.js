@@ -18,6 +18,6 @@ export const TRAILER_VIDEO_URL_POSTFIX ="/videos";
 export const YOUTUBE_VIDEO_URL_PREFIX = "https://www.youtube.com/embed/"
 export const YOUTUBE_VIDEO_URL_POSTFIX ="?autoplay=1&mute=1&controls=0&rel=0"
 export const TMDB_IMG_URL_PREFIX = "https://image.tmdb.org/t/p/w500/"
-export const supportedLanguages = [{lang:"english",code:"en"},{lang:"french",code:"fr"},{lang:"hindi",code:"hd"}]
+export const supportedLanguages = [{lang:"English",code:"en"},{lang:"French",code:"fr"},{lang:"Hindi",code:"hd"}]
 export const Ask_GPT= "Ask GPT";
 export const Home= "Home";

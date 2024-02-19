@@ -48,7 +48,7 @@ const HeaderContents = () => {
         <div className="flex flex-wrap mr-10 justify-between">
           {gpt === Home && (
             <select
-              className="h-fit p-1 my-auto mr-2"
+              className="h-fit p-1 my-auto mr-2 text-white bg-black px-3 border-[1px] rounded-md"
               onClick={(e) => {
                 dispatcher(changeLanguage(e.target.value));
               }}
