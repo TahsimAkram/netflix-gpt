@@ -5,7 +5,6 @@ import SecondaryConatainer from "./SecondaryConatainer";
 import { useSelector } from "react-redux";
 import { Ask_GPT } from "../utility/constants";
 import { GptSearchPage } from "./GptSearchPage";
-import { ShimmerUIThumbnail } from "shimmer-ui-effect";
 import Skeleton from "./Skeleton";
 
 const BrowseContent = () => {
