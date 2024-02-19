@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { addUser, removeUser } from "../utility/userSlice";
 import HeaderContents from "./HeaderContents";
 import { cleanMoviesList } from "../utility/moviesSlice";
+import { resetconfig } from "../utility/configSlice";
 
 const Header = () => {
   const dispatcher = useDispatch();
@@ -20,6 +21,7 @@ const Header = () => {
         } else {
         dispatcher(removeUser());
         dispatcher(cleanMoviesList());
+        dispatcher(resetconfig());
         navigate("/");
       }
     });

@@ -5,7 +5,7 @@ register();
 const MoviesList = ({ movies, banner }) => {
   return (
     <div className="relative z-20 px-5 py-5 ">
-    <h1 className="text-white mb-10 text-xl pl-5">{banner}</h1>
+    <h1 className="text-white mb-8 text-2xl pl-5">{banner}</h1>
     <swiper-container
       slides-per-view="4"
       css-mode="true"

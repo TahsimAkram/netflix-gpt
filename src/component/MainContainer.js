@@ -8,6 +8,7 @@ const MainContainer = () => {
   if(movies == null) return;
   const selectedMovie = movies[randomIndex];
   const {title,overview,id} = selectedMovie;
+  console.log("id :"+id)
   return (
     <div className="-mt-20">
       <VideoTitle title={title} overview={overview} />

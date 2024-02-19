@@ -1,33 +1,38 @@
 import { signOut } from "firebase/auth";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../utility/firebase";
-import { Ask_GPT, Home, NETFLIX_LOGO_CDN_URL, supportedLanguages } from "../utility/constants";
+import {
+  Ask_GPT,
+  Home,
+  NETFLIX_LOGO_CDN_URL,
+  supportedLanguages,
+} from "../utility/constants";
 import { useNavigate } from "react-router-dom";
+import { browseGpt, changeLanguage } from "../utility/configSlice";
 
 const HeaderContents = () => {
-    const user = useSelector((state) => state.user);
-    const [pageToggler, setPageToggler] = useState(Ask_GPT);
-    const navigate = useNavigate();
-    const signoutHandler = () => {
-        signOut(auth)
-          .then(() => {
-          })
-          .catch((error) => {
-            // An error happened.
-          });
-      };
-    const updateToggler = ()=>{
-      debugger;
-      if(pageToggler===Ask_GPT){
-        setPageToggler(Home);
-        navigate("/search");
-      }else{
-        setPageToggler(Ask_GPT);
-        navigate("/browse");
-      }
+  const user = useSelector((state) => state.user);
+  const gpt = useSelector((state) => state.config.isGpt);
+  const dispatcher = useDispatch();
+  const navigate = useNavigate();
+  const signoutHandler = () => {
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {
+        // An error happened.
+      });
+  };
 
+  const updateToggler = () => {
+    if (gpt === Ask_GPT) {
+      dispatcher(browseGpt(Home));
+    } else {
+      dispatcher(browseGpt(Ask_GPT));
     }
+    navigate("/browse");
+  };
+
   return (
     <div
       className={`relative flex justify-between z-20 bg-gradient-to-b from-black ${
@@ -41,11 +46,18 @@ const HeaderContents = () => {
       />
       {user && user.photoURL && (
         <div className="flex flex-wrap mr-10 justify-between">
-        {pageToggler === Home && <select className="h-fit p-1 my-auto mr-2" onClick={() => {}}>
-          {supportedLanguages.map((language) => {
-            return <option>{language.lang}</option>;
-          })}
-        </select>}
+          {gpt === Home && (
+            <select
+              className="h-fit p-1 my-auto mr-2"
+              onClick={(e) => {
+                dispatcher(changeLanguage(e.target.value));
+              }}
+            >
+              {supportedLanguages.map((language) => {
+                return <option key={language.code}>{language.lang}</option>;
+              })}
+            </select>
+          )}
           <img
             className="w-8 h-8 my-auto mr-2 rounded-md"
             src={user.photoURL}
@@ -56,7 +68,7 @@ const HeaderContents = () => {
             className="bg-red-600 px-3 h-8 my-auto mr-2 text-white rounded-md"
             onClick={updateToggler}
           >
-            {pageToggler}
+            {gpt}
           </button>
           <button
             className="bg-red-600 px-3 h-8 my-auto  text-white rounded-md"
