@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import appStore from './utility/appStore';
 import Login from './component/Login';
 import BrowseContent from './component/BrowseContent';
+import MovieDetail from './component/MovieDetail';
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -13,7 +14,7 @@ function App() {
     },
     {
         path:"/browse",
-        element:<BrowseContent />
+        element:<BrowseContent />,
     }
 ]);
 

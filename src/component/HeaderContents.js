@@ -40,7 +40,7 @@ const HeaderContents = () => {
       }`}
     >
       <img
-        className="w-48 ml-36"
+        className="w-[12%] ml-36"
         src={NETFLIX_LOGO_CDN_URL}
         alt="netflix_logo"
       />

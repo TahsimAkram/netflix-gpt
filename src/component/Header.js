@@ -18,6 +18,7 @@ const Header = () => {
          const{uid,displayName,email,photoURL} = user;
          dispatcher(addUser({uid:uid,displayName:displayName,email:email,photoURL:photoURL}));
          navigate("/browse");
+         
         } else {
         dispatcher(removeUser());
         dispatcher(cleanMoviesList());

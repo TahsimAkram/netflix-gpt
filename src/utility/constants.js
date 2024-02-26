@@ -13,11 +13,10 @@ export const NOW_PLAYING = "now_playing";
 export const POPULAR = "popular";
 export const TOP_RATED = "top_rated";
 export const JURASICPARK_LOGO_URL = "https://occ-0-3351-3646.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABRzeB5AXytb4LuI0MhsvSXwiIbjU-8HsQ3FyqRABu6PotWQiSwvw5vKjb6BHHDwxV5GARAoPuTiY0hDJsKWpray_jWTOmoWwl7OEfofWBf0c.png"
-export const TRAILER_VIDEO_URL_PREFIX = "https://api.themoviedb.org/3/movie/";
 export const TRAILER_VIDEO_URL_POSTFIX ="/videos";
 export const YOUTUBE_VIDEO_URL_PREFIX = "https://www.youtube.com/embed/"
 export const YOUTUBE_VIDEO_URL_POSTFIX ="?autoplay=1&mute=1&controls=0&rel=0"
-export const TMDB_IMG_URL_PREFIX = "https://image.tmdb.org/t/p/w500/"
+export const TMDB_IMG_URL_PREFIX = "https://image.tmdb.org/t/p/original/"
 export const supportedLanguages = [{lang:"English",code:"en"},{lang:"French",code:"fr"},{lang:"Hindi",code:"hd"}]
 export const Ask_GPT= "Ask GPT";
 export const Home= "Home";

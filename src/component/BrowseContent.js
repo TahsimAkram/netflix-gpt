@@ -20,11 +20,12 @@ const BrowseContent = () => {
   return (
     <div>
       {isGptSearch === Ask_GPT ? (
-        <>
+        <div className="relative">
           <Header />
           <MainContainer />
           <SecondaryConatainer />
-        </>
+          {/* <div className="absolute inset-0 bg-red-500 opacity-50 z-30 w-3/4" ></div> */}
+        </div>
       ) : (
         <GptSearchPage />
       )}

@@ -1,0 +1,11 @@
+.custom-prev-icon,
+.custom-next-icon {
+  cursor: pointer; /* Change cursor to indicate clickable */
+}
+
+/* Adjust styling of navigation icons as needed */
+.custom-prev-icon img,
+.custom-next-icon img {
+  width: 30px; /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */
+}
