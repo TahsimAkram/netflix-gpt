@@ -2,24 +2,30 @@ import React, { useEffect, useState } from 'react'
 import Header from './Header';
 import Skeleton from './Skeleton';
 import { useParams } from 'react-router-dom';
-import { NowPlayingMovieHeader, TMDB_IMG_URL_PREFIX, TMDB_MOVIES_BASE_URL } from '../utility/constants';
+import { NowPlayingMovieHeader, TMDB_MOVIES_BASE_URL } from '../utility/constants';
+import MainContainer from './MainContainer';
+import { useDispatch } from 'react-redux';
+import { addMovieId } from '../utility/moviesSlice';
 
 const MovieDetail = () => {
     const [movie,setMovie] = useState(null);
-    const {id} = useParams();
+    const {movieId} = useParams();
+    const dispatcher = useDispatch()
     
     const fetchMovieDetail = async () => {
-        const url = TMDB_MOVIES_BASE_URL + id;
+        const url = TMDB_MOVIES_BASE_URL + movieId;
         const data = await fetch(url, NowPlayingMovieHeader);
         const response = await data.json();
         setMovie(response);
         console.log(response);
     }
     useEffect(() => {
-        fetchMovieDetail();
-    }, []);
+        fetchMovieDetail(); 
+        return () => {dispatcher(addMovieId(null))};
+}, []);
+    
 
-    if ("movies" == "null") {
+    if (movie == null) {
         return (
             <Skeleton />
         );
@@ -27,9 +33,8 @@ const MovieDetail = () => {
     // const description = 
     return (
         <div>
-            <div  className="w-full">
-                <img className='w- h-1/2 object-contain' src={TMDB_IMG_URL_PREFIX+movie?.poster_path} alt={movie?.title}/>
-            </div>
+            <Header/>
+            <MainContainer selectedMovie = {movie}/>
         </div>
     )
 }

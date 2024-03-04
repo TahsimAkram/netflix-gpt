@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utility/firebase";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utility/userSlice";
 import HeaderContents from "./HeaderContents";
@@ -11,14 +11,16 @@ import { resetconfig } from "../utility/configSlice";
 const Header = () => {
   const dispatcher = useDispatch();
   const navigate = useNavigate();
+  const movieId = useSelector(state=>state.movies.movieId);
 
   useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
          const{uid,displayName,email,photoURL} = user;
          dispatcher(addUser({uid:uid,displayName:displayName,email:email,photoURL:photoURL}));
-         navigate("/browse");
-         
+         if(movieId==null){
+          navigate("/browse");
+         }
         } else {
         dispatcher(removeUser());
         dispatcher(cleanMoviesList());

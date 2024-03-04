@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addMovieId } from "../utility/moviesSlice";
 
-const MovieCard = ({ title, id, path, }) => {
+const MovieCard = ({ title, id, path }) => {
   const navigate = useNavigate();
   const dispatcher = useDispatch();
   return (
     <div className="cursor-pointer" onClick={() => {
-      dispatcher(addMovieId(id))
+      dispatcher(addMovieId(id));
+      navigate(`/title/${id}`);
     }}>
       <div className="w-full flex flex-col">
         <img

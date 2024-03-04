@@ -11,20 +11,25 @@ const BrowseContent = () => {
   useNowPlayingMovies();
   const movies = useSelector((state) => state.movies.nowPlayingMovies);
   const isGptSearch = useSelector((state) => state.config.isGpt);
+
   if(movies == null){
   return (
     <Skeleton/>
   );
 
   }
+
+  const randomIndex = Math.floor(Math.random() * 10);
+  const selectedMovie = movies[randomIndex];
+  console.log(randomIndex);
+
   return (
     <div>
       {isGptSearch === Ask_GPT ? (
         <div className="relative">
           <Header />
-          <MainContainer />
+          <MainContainer selectedMovie={selectedMovie} />
           <SecondaryConatainer />
-          {/* <div className="absolute inset-0 bg-red-500 opacity-50 z-30 w-3/4" ></div> */}
         </div>
       ) : (
         <GptSearchPage />

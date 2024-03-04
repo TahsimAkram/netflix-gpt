@@ -15,6 +15,10 @@ function App() {
     {
         path:"/browse",
         element:<BrowseContent />,
+    },
+    {
+        path:"/title/:movieId",
+        element:<MovieDetail/>
     }
 ]);
 
